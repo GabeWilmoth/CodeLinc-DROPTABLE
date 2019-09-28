@@ -12,7 +12,7 @@ import com.google.cloud.dialogflow.v2.TextInput.Builder;
 
 public class test {
 	public static void main(String[] args) {
-		System.out.println(detectIntentOld("hello").getIntent());
+		System.out.println(getFulfil(detectIntentOld("hello")));
 	}
 	
 	public static QueryResult detectIntentOld(String query) {
@@ -37,5 +37,9 @@ public class test {
             System.out.println("Unexpcted IOException: " + ex);
             return null;
         }
+    }
+
+    public static String getFulfil(QueryResult result){
+        return result.getFulfillmentText();
     }
 }
