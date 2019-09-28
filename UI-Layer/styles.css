@@ -1,0 +1,21 @@
+html, body, background{
+    background-image: url("flag.jpeg");
+    margin: 0;
+    height: 100%;
+    width: 100%;
+  }
+  .overlay{
+    padding-top: 0;
+    height: 100%;
+    background-image: linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, .5))
+  }
+  .container{
+    background-color: white;
+    height: 30px;
+    width: 70%;
+    margin: auto;
+  }
+  .box{
+    font-family: 'PT Sans', sans-serif;
+    color: red;
+  }
