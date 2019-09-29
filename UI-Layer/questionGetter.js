@@ -42,31 +42,31 @@ $(document).ready(function(){
                             "vis": false
                         },
                         {
-                            "id": "firstName",
+                            "id": "personFirstName",
                             "description": "Enter your first name: ",
                             "type": "text",
                             "vis": false
                         },
                         {
-                            "id": "lastName",
+                            "id": "personLastName",
                             "description": "Enter your last name: ",
                             "type": "text",
                             "vis": false
                         },
                         {
-                            "id": "email",
+                            "id": "personEmail",
                             "description": "Enter your email: ",
                             "type": "text",
                             "vis": false
                         },
                         {
-                            "id":"phoneNumber",
+                            "id":"personPhoneNumber",
                             "description": "Enter your phone number: ",
                             "type": "text",
                             "vis": false
                         },
                         {
-                            "id": "address",
+                            "id": "personAddress",
                             "description": "Enter your address: ",
                             "type": "text",
                             "vis": false
