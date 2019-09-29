@@ -2,17 +2,34 @@
 <!--Give parts of the questions their respective tags-->
 <!-- Add to the questions div -->
 <html>
-    <head>
-        <meta charset = "UTF-8">
-        <link rel="stylesheet" href="styles.css"/>
-        <script
-            src="https://code.jquery.com/jquery-3.4.1.js"
-            integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
-            crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+  <head>
+      <link rel="stylesheet" href="styles.css"/>
+      <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+      <script src="nextPage.js"></script>
     </head>
-    <body>
-        <div id = "questions"></div>
-    </body>
+  <body>
+    <div class="background overlay container">
+          
+        <div class="logo container3">
+          <img src="icon.png" style="width: 200px; height:200px;"alt="Veteran Icon">
+        </div>
+        
+        <div class="container2" style="margin-top: 100px;">
+          
+            <div class="box font"> 
+              <h1>Veteran Job Finder</h1>
+              This questionnaire allows veterans to answer questions in order to align their skills with appropriate job titles and create
+              a resume for the user.
+              Depending on which branch you served, various jobs will be picked based written responses. Click a button below to either 
+              take the questionnaire or use the chatbot to answer a few questions.
+              </div>
+              <div class="box">
+                <button class="button" id="toQuiz" onclick="toQuestionnaire()">Take the Questionnaire</button>
+                <button class="button">Chat Bot</button>
+            </div>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
