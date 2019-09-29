@@ -79,6 +79,6 @@ html, body, .background{
 }
 
 .button:hover{
-  background-color: darkgray;
+  background-color: rgb(175, 146, 146);
   color: white; 
 }
