@@ -9,7 +9,7 @@ html, body, .background{
 .container3{
   width: 72%;
   position: absolute;
-  top: 20%;
+  top: 10%;
   margin: auto;
   min-width: 200px;
   border-radius: 5px
@@ -22,6 +22,7 @@ html, body, .background{
 }
 
 .overlay{
+  display: ;
   margin: 0;
   padding-top: 0;
   height: 100%;
@@ -34,8 +35,6 @@ html, body, .background{
 
 .logo{
   text-align: center;
-  position: absolute;
-  top: 20px;
   z-index: 1;
 }
 
@@ -75,6 +74,12 @@ html, body, .background{
 }
 
 .center{
-  display: flex;
+  display: inline-block;
+  float: none;
   justify-content: center;
+}
+
+.button:hover{
+  background-color: darkgray;
+  color: white; 
 }
