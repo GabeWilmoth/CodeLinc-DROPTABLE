@@ -234,7 +234,8 @@ function getJobs(){
     //console.log(infos);
     var branch = $("#branchIDresponse").val();
     var oldJ = $("#oldJobresponse").val();
-    $.ajax({type: "POST", url: "localhost::8080/getJobTitle",data: infos}).done(function(){
+    console.log(typeof infos);
+    $.ajax({type: "POST", url: "localhost::8080/getJobTitle",data: infos, processData: false, contentType: false}).done(function(){
         console.log("YAY");
     });
 }
