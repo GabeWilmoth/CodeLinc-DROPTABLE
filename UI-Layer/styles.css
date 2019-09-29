@@ -82,3 +82,11 @@ html, body, .background{
   background-color: rgb(175, 146, 146);
   color: white; 
 }
+
+.myMessage{
+  position: relative;
+  width: 45%;
+  left:55%;
+  background-color:#44b;
+  color:#fff;
+}
