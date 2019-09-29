@@ -1,0 +1,20 @@
+Army,Infantry,Police Officer
+Army,Combat Engineer,Electrician
+Army,Military Police,Police Officer
+Army,Signal Corps,Satcom Operator
+Army,Air Defense,Meteorologist
+Navy,Air Traffic Controller,Air Traffic Controller
+Navy,Builders,Construction Worker
+Navy,Aviation Ordinance,Repair Worker
+Navy,Information System Technician,IT
+Navy,Navy Diver,Commercial Driver
+Air Force,In-Flight Refueling,Aircraft Cargo Supervisor
+Air Force,Air Traffic Controller,Air Traffic Controller
+Air Force,Aircrew Equipment,Mechanic
+Air Force,Cyberspace Defense,Computer Systems Manager
+Air Force,Weather,Meteorologist
+Marines,Infantry,Police Officer
+Marines,Combat Engineer,Electrician
+Marines,Aviation Ordinance,Avionics Technician
+Marines,Motor Transport,Commercial Driver
+Marines,Ground Ordnance Maintenance,Emergency Management Director
