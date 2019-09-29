@@ -1,6 +1,7 @@
 package DialogFlowConnection;
 
 import java.io.IOException;
+import java.util.Scanner;
 
 import com.google.cloud.dialogflow.v2.DetectIntentResponse;
 import com.google.cloud.dialogflow.v2.QueryInput;
@@ -10,15 +11,16 @@ import com.google.cloud.dialogflow.v2.SessionsClient;
 import com.google.cloud.dialogflow.v2.TextInput;
 import com.google.cloud.dialogflow.v2.TextInput.Builder;
 
-public class test {
+public class Bot {
 	public static void main(String[] args) {
-		System.out.println(getFulfil(detectIntentOld("hello")));
+		
+		talkWithBot("Hello");
 	}
 	
-	public static QueryResult detectIntentOld(String query) {
+	public static QueryResult detectIntent(String query) {
         try (SessionsClient client = SessionsClient.create()) {
             // Create the session information
-            SessionName session = SessionName.of("newagent-mjmqad", "jhgfjhfjhfhk");
+            SessionName session = SessionName.of("newagent-mjmqad", "jhgfjhfjhfhkx");
             
             // Set the text (hello) and language code (en-US) for the query
             Builder textInput = TextInput.newBuilder().setText(query).setLanguageCode("en-us");
@@ -42,4 +44,21 @@ public class test {
     public static String getFulfil(QueryResult result){
         return result.getFulfillmentText();
     }
+    
+public static void talkWithBot(String message) {
+    	
+    	//display hello message
+    	System.out.println(Bot.getFulfil(Bot.detectIntent(message)));
+    	
+    	//create new scanner 
+    	Scanner input = new Scanner(System.in);
+    	
+    	boolean test = true;
+    	while(test) {
+    		message = input.nextLine();
+    		System.out.println(getFulfil(detectIntent(message)));
+    	}
+    	
+    }
+
 }
