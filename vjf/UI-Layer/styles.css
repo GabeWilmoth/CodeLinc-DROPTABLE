@@ -2,3 +2,7 @@ body {
     color: #fff;
     background-color: #000;
 }
+
+select, input, button {
+    color: #000;
+}
