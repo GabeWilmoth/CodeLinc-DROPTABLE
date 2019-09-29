@@ -12,7 +12,7 @@ public class Experience {
     }
 
     public void setCompany(String company) {
-        this.company = company;
+        this.company = company == null ? "" : company;
     }
 
     public String getStartYear() {
@@ -20,7 +20,7 @@ public class Experience {
     }
 
     public void setStartYear(String startYear) {
-        this.startYear = startYear;
+        this.startYear = startYear == null ? "" : startYear;
     }
 
     public String getEndYear() {
@@ -28,7 +28,7 @@ public class Experience {
     }
 
     public void setEndYear(String endYear) {
-        this.endYear = endYear;
+        this.endYear = endYear == null ? "" : endYear;
     }
 
     public String getJobTitle() {
@@ -36,7 +36,7 @@ public class Experience {
     }
 
     public void setJobTitle(String jobTitle) {
-        this.jobTitle = jobTitle;
+        this.jobTitle = jobTitle == null ? "" : jobTitle;
     }
 
     public String[] getComments() {
@@ -44,6 +44,6 @@ public class Experience {
     }
 
     public void setComments(String[] comments) {
-        this.comments = comments;
+        this.comments = comments == null ? new String[]{""} : comments;
     }
 }

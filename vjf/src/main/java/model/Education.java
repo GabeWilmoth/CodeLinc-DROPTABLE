@@ -10,7 +10,7 @@ public class Education {
     }
 
     public void setSchool(String school) {
-        this.school = school;
+        this.school = school == null ? "" : school;
     }
 
     public String getYear() {
@@ -18,7 +18,7 @@ public class Education {
     }
 
     public void setYear(String year) {
-        this.year = year;
+        this.year = year == null ? "" : year;
     }
 
     public String getDegree() {
@@ -26,6 +26,6 @@ public class Education {
     }
 
     public void setDegree(String degree) {
-        this.degree = degree;
+        this.degree = degree == null ? "" : degree;
     }
 }

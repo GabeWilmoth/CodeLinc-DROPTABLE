@@ -35,6 +35,6 @@ public class Resume {
     }
 
     public void setSkills(String[] skills) {
-        this.skills = skills;
+        this.skills = skills == null ? new String[]{} : skills;
     }
 }

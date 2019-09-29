@@ -12,7 +12,7 @@ public class PersonalInformation {
     }
 
     public void setFirstName(String firstName) {
-        this.firstName = firstName;
+        this.firstName = firstName == null ? "" : firstName;
     }
 
     public String getLastName() {
@@ -20,7 +20,7 @@ public class PersonalInformation {
     }
 
     public void setLastName(String lastName) {
-        this.lastName = lastName;
+        this.lastName = lastName == null ? "" : lastName;
     }
 
     public String getPhoneNumber() {
@@ -28,7 +28,7 @@ public class PersonalInformation {
     }
 
     public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
+        this.phoneNumber = phoneNumber == null ? "" : phoneNumber;
     }
 
     public String getAddress() {
@@ -36,7 +36,7 @@ public class PersonalInformation {
     }
 
     public void setAddress(String address) {
-        this.address = address;
+        this.address = address == null ? "": address;
     }
 
     public String getEmail() {
@@ -44,7 +44,7 @@ public class PersonalInformation {
     }
 
     public void setEmail(String email) {
-        this.email = email;
+        this.email = email == null ? "" : email;
     }
     
 }
