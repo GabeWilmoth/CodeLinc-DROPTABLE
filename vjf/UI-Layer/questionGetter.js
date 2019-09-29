@@ -1,22 +1,61 @@
 // @author Tyler Wallschleger
+
+var jobsList = [["Army","Infantry","Police Officer"],
+["Army","Combat Engineer","Electrician"],
+["Army","Military Police","Police Officer"],
+["Army","Signal Corps","Satcom Operator"],
+["Army","Air Defense","Meteorologist"],
+["Navy","Air Traffic Controller","Air Traffic Controller"],
+["Navy","Builders","Construction Worker"],
+["Navy","Aviation Ordinance","Repair Worker"],
+["Navy","Information System Technician","IT"],
+["Navy","Navy Diver","Commercial Driver"],
+["Air Force","In-Flight Refueling","Aircraft Cargo Supervisor"],
+["Air Force","Air Traffic Controller","Air Traffic Controller"],
+["Air Force","Aircrew Equipment","Mechanic"],
+["Air Force","Cyberspace Defense","Computer Systems Manager"],
+["Air Force","Weather","Meteorologist"],
+["Marines","Infantry","Police Officer"],
+["Marines","Combat Engineer","Electrician"],
+["Marines","Aviation Ordinance","Avionics Technician"],
+["Marines","Motor Transport","Commercial Driver"],
+["Marines","Ground Ordnance Maintenance","Emergency Management Director"]];
 $(document).ready(function(){
     var testQuestion = [{
                             "id": "branchID", 
                             "description": "What branch of the military were you in?",
                             "type": "select",
-                            "options": ["Army", "Navy", "Air Force", "Marine"]
+                            "options": ["Select", "Army", "Navy", "Air Force", "Marines"],
+                            "vis": true
                         },
                         {
                             "id":"oldJob",
                             "description": "What job did you have in the military?",
-                            "type": "text"
+                            "type": "select",
+                            "options": [],
+                            "vis": true
                         },
                         {
                             "id": "jobDescription",
                             "description": "Describe this job: ",
-                            "type": "text"
+                            "type": "text",
+                            "vis": false
+                        },
+                        {
+                            "id": "firstName",
+                            "description": "Enter your first name: ",
+                            "type": "text",
+                            "vis": false
+                        },
+                        {
+                            "id": "lastName",
+                            "description": "Enter your last name: ",
+                            "type": "text",
+                            "vis": false
                         }
                     ];
+
+
     var questions = document.getElementById("questions");
 
     //For each question...
@@ -51,16 +90,17 @@ $(document).ready(function(){
         $(columnsResp).empty().append(response);
         $(rows).append(columnsResp);
 
+        //Place options for first dropdown.
         var opts = tq.getOptions();
-        console.log(opts);
         for(var x in opts){
             var optio = document.createElement("option");
             optio.text = opts[x];
             $(response).append(optio);
         }
         
-        //Add to the questions list
+        //Add to the questions list.
         $(questions).append(rows);
+        $(rows).css("display", tqx.vis ? "block": "none");
     }
 });
 
@@ -118,7 +158,8 @@ class Question {
 
 function createResume(){
     var infos = getInfo();
-    
+    console.log("getResume");
+    $(".row").css("display", "block");
 }
 
 function getJobs(){
@@ -130,9 +171,31 @@ function getJobs(){
 }
 
 function getInfo(){
+    if(document.getElementById("branchIDresponse").selectedIndex == 0)
+        return false;
+    $("#jobs").css("display", "none");
+    $("#resume").css("display", "none");
     var infos = document.querySelectorAll("[id*=response]");
     return infos;
 }
+
+function createJobsCSV(branch){
+    $("#oldJobresponse").empty();
+    for(var jo in jobsList){
+        if(jobsList[jo][0] == branch){
+            var optio = document.createElement("option");
+            optio.text = jobsList[jo][1];
+            $("#oldJobresponse").append(optio);
+        }
+    }
+}
+
+$(function(){
+    $("#branchIDresponse").change(function(){
+        var branch = $("#branchIDresponse").val();
+        createJobsCSV(branch);
+    });
+});
 
 class JobTitleRequest{
     constructor(branch, oldJob){
