@@ -1,0 +1,29 @@
+<html>
+  <head>
+      <link rel="stylesheet" href="styles.css"/>
+      <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+      <script
+            src="https://code.jquery.com/jquery-3.4.1.js"
+            integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+            crossorigin="anonymous"></script>
+      <script src="questionGetter.js"></script>
+    </head>
+  <body>
+    <div class="background overlay container">
+          
+        <button class="backButton" onclick="toIndex()"></button>
+        <div class="logo container3" style="z-index:0;">
+          <img src="icon.png" style="width: 200px; height:200px;"alt="Veteran Icon">
+        </div>
+        
+        <div id = "questions">
+                
+        </div>
+
+        <button id="resume" onClick="createResume()">Create Resume</button>
+        <button id="jobs" onClick="getJobs()">Get Jobs</button>
+      </div>
+    </div>
+  </body>
+</html>
