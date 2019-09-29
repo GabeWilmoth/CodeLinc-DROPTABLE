@@ -246,9 +246,16 @@ function getInfo(){
     /*var branch = $("#branchIDresponse").val();
     var oldJobs = $("#oldJobresponse").val();*/
     var infos = document.querySelectorAll("[id*=response]");
-
-    console.log(infos);
-
+    /*for(var i = 0; i < infos.length; i++){
+        console.log(infos[i]);
+    }
+    /*for(var i in infos){
+        console.log(i);
+    }*/
+    //console.log(infos);
+    var sendThis = [{"id": "branchIDresponse", "response": $("#branchIDresponse").val()},
+                    {"id": "oldJobresponse", "response": $("#oldJobresponse").val()}];
+    console.log(sendThis[0]);
     return infos;
 }
 
