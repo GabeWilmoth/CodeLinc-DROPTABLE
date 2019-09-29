@@ -71,6 +71,54 @@ $(document).ready(function(){
                             "description": "Enter your address: ",
                             "type": "text",
                             "vis": false
+                        },
+                        {
+                            "id": "otherExperienceCompany",
+                            "description": "Other experience; Company:",
+                            "type": "text",
+                            "vis": false
+                        },
+                        {
+                            "id": "otherExperienceTitle",
+                            "description": "Other experience title",
+                            "type": "text",
+                            "vis" : false
+                        },
+                        {
+                            "id": "otherExperienceYears",
+                            "description": "Other experience years",
+                            "type": "text",
+                            "vis": false
+                        },
+                        {
+                            "id": "otherExperienceDescription",
+                            "description": "Other experience description",
+                            "type": "text",
+                            "vis":false
+                        },
+                        {
+                            "id": "eduSchool",
+                            "description": "If you went to school, where did you go?",
+                            "type": "text",
+                            "vis": false
+                        },
+                        {
+                            "id": "eduDegree",
+                            "description": "What degree did you got?",
+                            "type": "text",
+                            "vis": false
+                        },
+                        {
+                            "id":"eduYear",
+                            "description": "When did you go to school?",
+                            "type": "text",
+                            "vis": false
+                        },
+                        {
+                            "id": "otherSkills",
+                            "description": "Enter any other skills you have",
+                            "type": "text",
+                            "vis": false
                         }
                     ];
 
