@@ -52,6 +52,24 @@ $(document).ready(function(){
                             "description": "Enter your last name: ",
                             "type": "text",
                             "vis": false
+                        },
+                        {
+                            "id": "email",
+                            "description": "Enter your email: ",
+                            "type": "text",
+                            "vis": false
+                        },
+                        {
+                            "id":"phoneNumber",
+                            "description": "Enter your phone number: ",
+                            "type": "text",
+                            "vis": false
+                        },
+                        {
+                            "id": "address",
+                            "description": "Enter your address: ",
+                            "type": "text",
+                            "vis": false
                         }
                     ];
 
