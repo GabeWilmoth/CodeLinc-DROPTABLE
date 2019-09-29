@@ -231,7 +231,7 @@ function createResume(){
 
 function getJobs(){
     var infos = getInfo();
-    console.log(infos);
+    //console.log(infos);
     var branch = $("#branchIDresponse").val();
     var oldJ = $("#oldJobresponse").val();
     $.ajax({type: "POST", url: "localhost::8080/getJobTitle",data: infos}).done(function(){

@@ -8,15 +8,17 @@
                 src="https://code.jquery.com/jquery-3.4.1.js"
                 integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
                 crossorigin="anonymous"></script>
-        <script src="questionGetter.js"></script>
+        <script src="sendMessage.js"></script>
         <script src="nextPage.js"></script>
     </head>
     <body>
         <div class="background overlay container">
         
             <div class="container2">
-                <div></div>
+                <div id="messages"></div>
                 <button class="backButton" style="position:relative; top:0px" onclick="toIndex();">Go back</button>
+                <input id="myText" type="text" placeholder="Enter your message">
+                <button id="sender" onClick="sendMe()">Send</button>
             </div>
     
         </div>
