@@ -20,6 +20,7 @@ var jobsList = [["Army","Infantry","Police Officer"],
 ["Marines","Aviation Ordinance","Avionics Technician"],
 ["Marines","Motor Transport","Commercial Driver"],
 ["Marines","Ground Ordnance Maintenance","Emergency Management Director"]];
+
 $(document).ready(function(){
     var testQuestion = [{
                             "id": "branchID", 
@@ -181,19 +182,26 @@ function createResume(){
 }
 
 function getJobs(){
-    var infos = getInfo();
-    console.log(infos);
+    let infos = getInfo();
     $.ajax({type: "POST", url: "localhost::8080/getJobTitle",data: infos}).done(function(){
         console.log("YAY");
     });
 }
 
 function getInfo(){
-    if(document.getElementById("branchIDresponse").selectedIndex == 0)
-        return false;
     $("#jobs").css("display", "none");
     $("#resume").css("display", "none");
-    var infos = document.querySelectorAll("[id*=response]");
+
+    var branch = $("#branchIDresponse").val();
+    var oldJobs = $("#oldJobresponse").val();
+    
+    var infos = {
+        "branch": branch,
+        "oldJobs": oldJobs
+    }
+
+    console.log(infos);
+
     return infos;
 }
 
