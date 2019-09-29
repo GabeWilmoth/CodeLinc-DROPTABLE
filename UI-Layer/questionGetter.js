@@ -243,13 +243,9 @@ function getInfo(){
     $("#jobs").css("display", "none");
     $("#resume").css("display", "none");
 
-    var branch = $("#branchIDresponse").val();
-    var oldJobs = $("#oldJobresponse").val();
-    
-    var infos = {
-        "branch": branch,
-        "oldJobs": oldJobs
-    }
+    /*var branch = $("#branchIDresponse").val();
+    var oldJobs = $("#oldJobresponse").val();*/
+    var infos = document.querySelectorAll("[id*=response]");
 
     console.log(infos);
 

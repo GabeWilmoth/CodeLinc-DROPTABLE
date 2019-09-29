@@ -25,6 +25,11 @@ import org.apache.poi.xwpf.usermodel.XWPFParagraph;
 import org.apache.poi.xwpf.usermodel.XWPFRun;
 
 public class PDFGeneration {
+	
+	/*public static Object resumeBuilder() {
+		
+		return "";
+	}*/
 
 	public static void main(String[] args) throws FileNotFoundException, IOException {
 		XWPFDocument doc = new XWPFDocument();
@@ -39,83 +44,95 @@ public class PDFGeneration {
 			r1.setFontSize(24);
 			r1.setText("John Doe");
 			r1.setBold(true);
-			r1.setFontFamily("Times New Roman");
-			//r1.setTextPosition(100);
+			r1.setFontFamily("Times New Roman");						
 			
+			XWPFRun run2 = p1.createRun();
+			run2.addBreak();
+			run2.setFontSize(12);
+			run2.setText("Phone #" + "|");
+			run2.setText("Address" + "|");
+			run2.setText("gawilmot@unch.edu");
+			run2.setFontFamily("Times New Roman");
+			p1.setBorderBottom(Borders.BASIC_BLACK_DASHES);
+
+			XWPFParagraph p2 = doc.createParagraph();
+			p2.setAlignment(ParagraphAlignment.CENTER);
+			
+			XWPFRun r2 = p2.createRun();			
+			r2.setText("Experience");
+			r2.setFontSize(20);
+			r2.setFontFamily("Times New Roman");
+			p2.setBorderBottom(Borders.BASIC_BLACK_DASHES);
+
+			XWPFParagraph par3 = doc.createParagraph();
+			par3.setAlignment(ParagraphAlignment.LEFT);
+			
+			XWPFRun r3 = par3.createRun();
+			r3.setText("Company/Branch");;
+			r3.setFontSize(12);
+			r3.setText("             							             ");
+			r3.setText("Year Span");
+			r3.addBreak();
+			r3.setText("Job Title");			
 			
 			String [] fruits = {"Apple", "Banana", "mango", "guava", "pear", "mellon" };
 	        // for each item a paragraph is created and the Style and NumId is set
 	        for (int i = 0; i < fruits.length; i++) {
 	          
-	            XWPFParagraph p = doc.createParagraph();
+	            XWPFParagraph p = doc.createParagraph();	            
 	            p.setStyle("ListParagraph");
 	            // 2 prints bullet as of this code and 1 would print numbers
 	            p.setNumID(BigInteger.valueOf(2));
 	            // good to see the XML structure
 	            System.out.println(p.getCTP());
-	            
 	        	  XWPFRun r = p.createRun();
 	        	  r.setText(fruits[i]);
 	        }       
-			
-			
-			XWPFRun run2 = p1.createRun();
-			run2.addBreak();
-			run2.setFontSize(12);
-			run2.setText("dfkjasdfbakjsfbnajkfbjksdbjklsa dfhasdklfnasdklfn hafklnam vkanvam lhfalknfs");
-			run2.setFontFamily("Times New Roman");
 
-			XWPFParagraph p2 = doc.createParagraph();
-			p2.setAlignment(ParagraphAlignment.RIGHT);
-
-			XWPFRun r2 = p2.createRun();
-			r2.setText("jumped over the lazy dog");
-			r2.setStrike(true);
-			r2.setFontSize(20);
-
-			XWPFRun r3 = p2.createRun();
-			r3.setText("and went away");
-			r3.setStrike(true);
-			r3.setFontSize(20);
-			r3.setSubscript(VerticalAlign.SUPERSCRIPT);
-
-			XWPFParagraph p3 = doc.createParagraph();
-			p3.setWordWrap(true);
-			p3.setPageBreak(true);
-
-			// p3.setAlignment(ParagraphAlignment.DISTRIBUTE);
-			p3.setAlignment(ParagraphAlignment.BOTH);
-			// p3.setSpacingBetween(15, LineSpacingRule.EXACT);
-
-			p3.setIndentationFirstLine(600);
-
-			XWPFRun r4 = p3.createRun();
-			r4.setTextPosition(20);
-			r4.setText("To be, or not to be: that is the question: " + "Whether 'tis nobler in the mind to suffer "
-					+ "The slings and arrows of outrageous fortune, " + "Or to take arms against a sea of troubles, "
-					+ "And by opposing end them? To die: to sleep; ");
-			r4.addBreak(BreakType.PAGE);
-			r4.setText("No more; and by a sleep to say we end " + "The heart-ache and the thousand natural shocks "
-					+ "That flesh is heir to, 'tis a consummation " + "Devoutly to be wish'd. To die, to sleep; "
-					+ "To sleep: perchance to dream: ay, there's the rub; " + ".......");
-			r4.setItalic(true);
-			// This would imply that this break shall be treated as a simple line break, and
-			// break the line after that word:
-
-			XWPFRun r5 = p3.createRun();
-			r5.setTextPosition(-10);
-			r5.setText("For in that sleep of death what dreams may come");
-			r5.addCarriageReturn();
-			r5.setText("When we have shuffled off this mortal coil, " + "Must give us pause: there's the respect "
-					+ "That makes calamity of so long life;");
+	        XWPFParagraph par4 = doc.createParagraph();
+	        par4.setAlignment(ParagraphAlignment.CENTER);
+	        XWPFRun r4 = par4.createRun();
+	        
+	        r4.setText("Education");
+	        r4.setFontSize(20);
+			r4.setFontFamily("Times New Roman");
+			par4.setBorderBottom(Borders.BASIC_BLACK_DASHES);
+	        
+			XWPFParagraph par5 = doc.createParagraph();
+	        par5.setAlignment(ParagraphAlignment.LEFT);
+	        XWPFRun r5 = par5.createRun();
+	        
+	        r5.setText("School");
+			r5.setFontSize(12);
+			r5.setText("             								                            ");
+			r5.setText("Grad Year");
 			r5.addBreak();
-			r5.setText("For who would bear the whips and scorns of time, "
-					+ "The oppressor's wrong, the proud man's contumely,");
-
-			r5.addBreak(BreakClear.ALL);
-			r5.setText("The pangs of despised love, the law's delay, " + "The insolence of office and the spurns "
-					+ ".......");
-
+			r5.setText("Degree");
+			
+			XWPFParagraph par6 = doc.createParagraph();
+	        par6.setAlignment(ParagraphAlignment.CENTER);
+	        XWPFRun r6 = par6.createRun();
+	        
+	        r6.setText("Skills");
+	        r6.setFontSize(20);
+			r6.setFontFamily("Times New Roman");
+			par6.setBorderBottom(Borders.BASIC_BLACK_DASHES);
+	        
+	        String [] fruits2 = {"Apple", "Banana", "mango", "guava", "pear", "mellon" };
+	        // for each item a paragraph is created and the Style and NumId is set
+	        for (int i = 0; i < fruits2.length; i++) {
+	          
+	            XWPFParagraph par7 = doc.createParagraph();	   
+	            par7.setAlignment(ParagraphAlignment.LEFT);		        
+	            par7.setStyle("ListParagraph");
+	            // 2 prints bullet as of this code and 1 would print numbers
+	            par7.setNumID(BigInteger.valueOf(2));
+	            // good to see the XML structure
+	            System.out.println(par7.getCTP());
+	            
+	        	  XWPFRun r7 = par7.createRun();
+	        	  r7.setText(fruits2[i]);
+	        }     
 			try (FileOutputStream out = new FileOutputStream("simple1.docx")) {
 				doc.write(out);
 			}
